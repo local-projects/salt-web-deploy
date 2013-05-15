@@ -17,10 +17,8 @@
 
 {{ args['user'] }}-log-dir:
   file:
-    - names: 
+    - name: 
       - /home/{{ args['user'] }}/log
-      - /home/{{ args['user'] }}/log/nginx
-      - /home/{{ args['user'] }}/log/uwsgi
     - directory
     - mode: 770
     - user: {{ args['user'] }}
@@ -29,7 +27,6 @@
 {{ args['user'] }}-log-sub-dirs:
   file:
     - names: 
-      - /home/{{ args['user'] }}/log
       - /home/{{ args['user'] }}/log/nginx
       - /home/{{ args['user'] }}/log/uwsgi
     - directory
