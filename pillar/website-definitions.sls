@@ -12,7 +12,7 @@ websites:
     
     git_key: None
     git_repo: git://github.com/lucasvickers/lv-test
-    git_revision: develop
+    git_revision: master
     uwsgi_module: changebyus
     uwsgi_callable: app
 
