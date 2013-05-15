@@ -2,7 +2,7 @@ include:
   - sls.nginx
   - sls.supervisor
   - sls.git
-  - sls.cbu-user-group-folders
+  - sls.user-group-folders
   - sls.uwsgi
   - sls.virtualenv
 

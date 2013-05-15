@@ -1,6 +1,7 @@
 include:
   - python
-  
+  - user-group-folders
+
 supervisor:
   pkg:
     - installed

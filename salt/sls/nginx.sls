@@ -1,3 +1,6 @@
+include:
+  - user-group-folders
+
 nginx:
   pkg:
     - installed

@@ -1,5 +1,6 @@
 include:
   - python
+  - user-group-folders
 
 uwsgi:
   pkg:
