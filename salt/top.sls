@@ -1,0 +1,4 @@
+base:
+  '*':
+    - sls.webservice
+

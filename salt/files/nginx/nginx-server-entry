@@ -1,0 +1,39 @@
+server {
+        listen                  80;
+        #ssl                     on;
+        #ssl_certificate         /etc/ssl/certs/myssl.crt;
+        #ssl_certificate_key     /etc/ssl/private/myssl.key;
+        server_name             {{ server_name }};
+
+        access_log /home/{{ user }}/log/nginx/access.log;
+        error_log /home/{{ user }}/log/nginx/error.log;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to index.html
+                try_files $uri @{{ site_identifier }};
+                # Uncomment to enable naxsi on this location
+                # include /etc/nginx/naxsi.rules
+        }
+
+        location @{{ site_identifier }} {
+                include uwsgi_params;
+                uwsgi_pass unix:/home/{{ user }}/run/uwsgi.sock;
+                uwsgi_param UWSGI_PYHOME /home/{{ user }}/site/virtualenv;
+                uwsgi_param UWSGI_CHDIR /home/{{ user }}/site/{{ site_identifier }};
+                uwsgi_param UWSGI_MODULE {{ uwsgi_module }};
+                uwsgi_param UWSGI_CALLABLE {{ uwsgi_callable }};
+        }
+
+        location /static {
+                root /home/{{ user }}/site/{{ site_identifier }}/changebyus/;
+                index index.html intex.html;
+        }
+
+        location /doc/ {
+                alias /usr/share/doc/;
+                autoindex on;
+                allow 127.0.0.1;
+                deny all;
+        }
+}

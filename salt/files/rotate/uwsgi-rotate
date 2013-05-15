@@ -1,0 +1,11 @@
+"/home/{{ user }}/log/uwsgi/*.log" "/home/{{ user }}/log/uwsgi/*/*.log" {
+  copytruncate
+  daily
+  rotate 10
+  size 10M
+  compress
+  delaycompress
+  missingok
+  notifempty
+  create 0640 {{ user }} {{ group }}
+}
