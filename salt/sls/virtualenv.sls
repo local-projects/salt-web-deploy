@@ -1,6 +1,5 @@
-python:
-  pkg:
-    - installed
+include:
+  - python
 
 python-pip:
   pkg:

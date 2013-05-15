@@ -11,7 +11,7 @@ websites:
     # TODO SSL
     
     git_key: None
-    git_repo: git://github.com/lucasvickers/lv-test.
+    git_repo: git://github.com/lucasvickers/lv-test
     git_revision: develop
     uwsgi_module: changebyus
     uwsgi_callable: app

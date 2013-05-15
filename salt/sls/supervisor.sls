@@ -37,7 +37,7 @@ supervisor_{{ args['site_identifier'] }}_task_config:
 
 supervisor_{{ args['site_identifier'] }}_task:
   supervisord:
-    - name: {{ args['site_identifier'] }}_task
+    - name: {{ args['site_identifier'] }}_uwsgi_task
     - running
     - restart: False
     - require:
