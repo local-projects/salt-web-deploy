@@ -4,7 +4,7 @@ nginx:
   service:
     - running
 
-{% for site, args in pillar["files"].iteritems() %}
+{% for site, args in pillar["websites"].iteritems() %}
 
 nginx_site_config:
   file.managed:

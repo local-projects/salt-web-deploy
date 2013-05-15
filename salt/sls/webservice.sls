@@ -8,7 +8,7 @@ include:
 
 
 
-{% for site, args in pillar["files"].iteritems() %}
+{% for site, args in pillar["websites"].iteritems() %}
 
 {{ args['site_identifier'] }}_git:
   git.latest:

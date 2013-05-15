@@ -5,7 +5,7 @@ uwsgi:
       - pkg: python
 
 
-{% for site, args in pillar["files"].iteritems() %}
+{% for site, args in pillar["websites"].iteritems() %}
 
 {{ args['site_identifier]' }}_uwsgi_rotate_config:
   file.managed:

@@ -1,4 +1,4 @@
-{% for site, args in pillar["files"].iteritems() %}
+{% for site, args in pillar["websites"].iteritems() %}
 
 {{ args['group'] }}-group:
   group.present:

@@ -14,7 +14,7 @@ supervisor_conf:
     - require:
       - pkg: supervisor
 
-{% for site, args in pillar["files"].iteritems() %}
+{% for site, args in pillar["websites"].iteritems() %}
 
 supervisor_{{ args['site_identifier'] }}_task_config:
   file.managed:
