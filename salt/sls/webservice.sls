@@ -7,7 +7,6 @@ include:
   - sls.virtualenv
 
 
-
 {% for site, args in pillar["websites"].iteritems() %}
 
 {{ args['site_identifier'] }}_git:
