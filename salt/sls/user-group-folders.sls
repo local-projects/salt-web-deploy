@@ -15,7 +15,7 @@
   - require:
     - group: {{ args['group'] }}-group
 
-log-dirs:
+log-dir:
   file:
     - names: 
       - /home/{{ args['user'] }}/log
@@ -25,6 +25,19 @@ log-dirs:
     - mode: 770
     - user: {{ args['user'] }}
     - group: {{ args['group'] }}
+
+log-sub-dirs:
+  file:
+    - names: 
+      - /home/{{ args['user'] }}/log
+      - /home/{{ args['user'] }}/log/nginx
+      - /home/{{ args['user'] }}/log/uwsgi
+    - directory
+    - mode: 770
+    - user: {{ args['user'] }}
+    - group: {{ args['group'] }}
+    - require:
+      file: log-dir
 
 site-dir:
   file:
