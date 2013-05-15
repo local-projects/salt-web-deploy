@@ -7,9 +7,9 @@ uwsgi:
 
 {% for site, args in pillar["websites"].iteritems() %}
 
-{{ args['site_identifier]' }}_uwsgi_rotate_config:
+{{ args['site_identifier'] }}_uwsgi_rotate_config:
   file.managed:
-    - name: /etc/logrotate.d/args['site_identifier_' }}-uwsgi
+    - name: /etc/logrotate.d/{{ args['site_identifier'] }}-uwsgi
     - source: salt://files/rotate/uwsgi-rotate
     - template: jinja
     - contect:
