@@ -1,3 +1,6 @@
+include:
+  - python
+  
 supervisor:
   pkg:
     - installed
@@ -18,7 +21,7 @@ supervisor_conf:
 
 supervisor_{{ args['site_identifier'] }}_task_config:
   file.managed:
-    - name: /etc/supervisor/conf.d/{{ site_identifier }}_uwsgi_task.conf
+    - name: /etc/supervisor/conf.d/{{ args['site_identifier'] }}_uwsgi_task.conf
     - source: salt://files/supervisor/conf.d/uwsgi_task.conf
     - template: jinja
     - context:

@@ -1,3 +1,6 @@
+include:
+  - python
+
 uwsgi:
   pkg:
     - installed
