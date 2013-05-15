@@ -15,7 +15,7 @@
   - require:
     - group: {{ args['group'] }}-group
 
-log-dir:
+{{ args['user'] }}-log-dir:
   file:
     - names: 
       - /home/{{ args['user'] }}/log
@@ -26,7 +26,7 @@ log-dir:
     - user: {{ args['user'] }}
     - group: {{ args['group'] }}
 
-log-sub-dirs:
+{{ args['user'] }}-log-sub-dirs:
   file:
     - names: 
       - /home/{{ args['user'] }}/log
@@ -37,9 +37,9 @@ log-sub-dirs:
     - user: {{ args['user'] }}
     - group: {{ args['group'] }}
     - require:
-      file: log-dir
+      file: {{ args['user'] }}-log-dir
 
-site-dir:
+{{ args['user'] }}-site-dir:
   file:
     - name: /home/{{ args['user'] }}/site
     - directory
@@ -47,7 +47,7 @@ site-dir:
     - user: {{ args['user'] }}
     - group: {{ args['group'] }}
 
-run-dir:
+{{ args['user'] }}-run-dir:
   file:
     - name: /home/{{ args['user'] }}/run
     - directory
