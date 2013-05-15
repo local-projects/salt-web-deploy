@@ -1,6 +1,6 @@
 include:
-  - python
-  - user-group-folders
+  - sls.python
+  - sls.user-group-folders
 
 supervisor:
   pkg:

@@ -1,5 +1,5 @@
 include:
-  - python
+  - sls.python
 
 python-pip:
   pkg:

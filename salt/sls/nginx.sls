@@ -1,5 +1,5 @@
 include:
-  - user-group-folders
+  - sls.user-group-folders
 
 nginx:
   pkg:

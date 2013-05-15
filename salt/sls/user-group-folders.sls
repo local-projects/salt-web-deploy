@@ -34,7 +34,7 @@
     - user: {{ args['user'] }}
     - group: {{ args['group'] }}
     - require:
-      file: {{ args['user'] }}-log-dir
+      - file: {{ args['user'] }}-log-dir
 
 {{ args['user'] }}-site-dir:
   file:
